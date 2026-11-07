@@ -1,0 +1,29 @@
+# Default-deny: only the paths below can ever be committed.
+# This project was developed in a working folder that also holds device logs,
+# screenshots, adb helpers and private keys - none of that belongs on GitHub.
+/*
+!.gitignore
+!.gitattributes
+!README.md
+!README.zh-CN.md
+!LICENSE
+!THIRD_PARTY_NOTICES.md
+!build.sh
+!app/
+!tools/
+
+# Extra safety nets (applies inside app/ and tools/ too)
+*.p12
+*.keystore
+*.jks
+*.pk8
+*.pem
+*.apk
+*.idsig
+*.aar
+build/
+dist/
+keystore/
+.research/
+.workbuddy/
+*.log

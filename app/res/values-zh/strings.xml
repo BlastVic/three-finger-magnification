@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 中文：设备语言为中文（简/繁任意变体）时生效；其余语言回退到 values/ 的英文默认。 -->
+<resources>
+    <string name="app_name">三指双击放大</string>
+    <string name="tile_label">三指双击放大</string>
+    <string name="accessibility_label">三指双击放大</string>
+    <string name="accessibility_summary">三根手指轻点两下切换全屏放大，任意界面（含游戏）均可使用。</string>
+    <string name="accessibility_description">开启后，系统会以只读方式监听原始触摸输入，识别「三指双击」并切换全屏放大：再次三指双击即取消。单指点击、长按、滑动及所有系统手势都原样传递，不会出现连点三次误触放大。本服务需要「触摸探索」能力用于手势通道、「放大」能力用于缩放屏幕，不读取界面内容、不联网、不收集数据。</string>
+
+    <string name="title">三指双击放大</string>
+    <string name="subtitle">iOS 风格缩放 · 系统级全局生效</string>
+    <string name="status_title">运行状态</string>
+    <string name="status_not_enabled">● 未开启无障碍服务</string>
+    <string name="zoom_normal">当前：正常显示</string>
+    <string name="btn_open_accessibility">开启无障碍服务</string>
+    <string name="hint_accessibility">在设置里找到「三指双击放大」并开启，允许「触摸探索」和「放大」权限即可。</string>
+    <string name="switch_enable">启用三指双击放大</string>
+    <string name="hint_gesture">三根手指同时轻点两下 → 放大；再来一次 → 恢复。在原始输入层识别，桌面、浏览器、游戏内都有效。</string>
+    <string name="label_scale">放大倍数</string>
+    <string name="label_center">放大中心</string>
+    <string name="rb_center_gesture">以三指位置为中心（类似 iOS）</string>
+    <string name="rb_center_screen">始终以屏幕中心放大</string>
+    <string name="sw_vibrate">切换时震动反馈</string>
+    <string name="sw_keep_zoom">切换应用后保持放大</string>
+    <string name="hint_keep_zoom">部分 Android 15 机型在切换应用时会自动还原缩放，此开关会自动补回。</string>
+    <string name="sw_zero">零干扰模式（推荐，保持开启）</string>
+    <string name="hint_zero">默认开启（推荐）：所有触摸从第一帧就原样交给应用与系统，单指点击、长按、滑动、底部上滑、边缘返回、通知栏下拉全部保持原生行为，本应用不缓冲、不接管任何触摸。\n\n只有当三指双击完全没反应时，才关闭此开关试用「接管模式」；接管模式会短暂缓冲触摸，在部分机型上会把单指点击变成误触长按，不建议日常使用。</string>
+    <string name="label_tools">工具</string>
+    <string name="btn_test">测试：立即切换放大</string>
+    <string name="btn_battery">后台保护 / 电池优化设置</string>
+    <string name="btn_system_zoom">关闭系统自带的「三击放大」</string>
+    <string name="hint_system_zoom">如果以前开过系统的放大快捷方式，请把「点按三次放大」关掉，否则仍会误触。</string>
+    <string name="label_diag">手势诊断</string>
+    <string name="log_empty_short">暂无记录</string>
+    <string name="btn_clear">清空记录</string>
+    <string name="footer_about">原理：Shizuku 以只读方式监听原始触摸输入节点，识别三指双击；不注入、不拦截、不缓冲任何触摸事件，因此单指点击、长按、滑动和所有系统手势都保持原生行为。放大由系统放大控制器实现，放大后仍可正常触控，双指拖动可平移视口。\n\n注意：平板重启后需在 Shizuku 里启动一次服务（或插电脑运行配套脚本）。本应用不联网、不读取界面内容、不收集任何数据。</string>
+
+    <string name="mode_zero">零干扰模式（不接管触摸）</string>
+    <string name="mode_takeover">接管模式（不推荐）</string>
+    <string name="status_running">● 服务运行中 · %1$s</string>
+    <string name="status_connecting">● 服务已启用（正在连接）</string>
+    <string name="status_shizuku">Shizuku：%1$s</string>
+    <string name="state_unavailable_ui">不可用：%1$s</string>
+    <string name="zoom_active">当前：已放大（再次三指双击恢复）</string>
+    <string name="toast_zero_on">零干扰：系统触摸完全原样，三指由 Shizuku 原始输入识别</string>
+    <string name="toast_zero_off">接管模式（旧）：会缓冲触摸，不推荐</string>
+    <string name="toast_enable_service">请先开启无障碍服务</string>
+    <string name="toast_battery_fail">无法打开电池优化设置，请在系统设置中手动添加白名单</string>
+    <string name="toast_system_zoom">在「无障碍 → 放大功能」里关闭「点按三次放大」快捷方式</string>
+    <string name="toast_settings_fail">无法打开系统设置，请手动进入「设置 → 无障碍」</string>
+    <string name="log_empty">暂无记录。开启服务后，在任意界面用三根手指轻点两下，这里会显示识别到的手势。</string>
+
+    <string name="log_shizuku">Shizuku：%1$s</string>
+    <string name="state_not_initialized">未初始化</string>
+    <string name="state_listener_failed">监听器注册失败：%1$s</string>
+    <string name="state_disconnected">服务断开，等待重连</string>
+    <string name="state_granted">已授权，正在连接</string>
+    <string name="state_denied">授权被拒绝</string>
+    <string name="state_not_running">服务未运行（请在 Shizuku 里启动）</string>
+    <string name="state_waiting_auth">等待 Shizuku 授权</string>
+    <string name="state_unavailable">Shizuku 暂不可用：%1$s</string>
+    <string name="state_starting">正在启动 shell 触摸监听</string>
+    <string name="state_bind_failed">绑定失败：%1$s</string>
+    <string name="state_listening">监听中（原始触摸只读）</string>
+    <string name="state_start_failed">监听启动失败 code=%1$d</string>
+    <string name="state_start_error">启动监听异常：%1$s</string>
+    <string name="state_user_service_lost">UserService 断开</string>
+
+    <string name="log_restored_zoom">→ 已恢复放大（系统重置）</string>
+    <string name="log_triple_tap">★ 三指双击（峰值 %1$d 指）</string>
+    <string name="log_disabled_reset">功能已关闭 → 恢复缩放</string>
+    <string name="log_service_connected">服务已连接，手势监听就绪</string>
+    <string name="log_shizuku_init_failed">Shizuku 初始化失败：%1$s</string>
+    <string name="log_debug_zero">调试：零干扰模式=%1$b</string>
+    <string name="log_passthrough_full">穿透区域=全屏（零干扰）</string>
+    <string name="log_passthrough_edges">穿透区域=屏幕边缘系统手势区，底/侧/顶=%1$d/%2$d/%3$d px</string>
+    <string name="log_region_failed">区域配置失败：%1$s</string>
+    <string name="log_config_done">配置完成：零干扰=%1$b，flags=0x%2$s</string>
+    <string name="log_controller_unavailable">触摸控制器不可用</string>
+    <string name="log_controller_state">控制器状态=%1$s</string>
+    <string name="log_controller_attached">触摸控制器已接管（自识别三指双击）</string>
+    <string name="log_controller_failed">触摸控制器注册失败：%1$s</string>
+    <string name="log_touch_stream">触摸流已接入，state=%1$s</string>
+    <string name="log_three_down">三指按下（controller，%1$d 指）</string>
+    <string name="log_passthrough_no_events">穿透手势已派发但无事件副本（ROM 限制）</string>
+    <string name="log_motion_channel">onMotionEvent 原始触摸通道可用</string>
+    <string name="log_triple_single">识别到三指轻点（峰值 %1$d 指，%2$d ms）</string>
+    <string name="log_triple_legacy">★ 三指双击（穿透模式自识别）</string>
+    <string name="log_gesture">手势 #%1$d %2$s | 事件 %3$d | 峰值 %4$d 指%5$s%6$s</string>
+    <string name="log_gesture_events">｜含事件副本</string>
+    <string name="log_compat_double">→ 兼容模式：两次三指单击合成双击</string>
+    <string name="log_magnifier_unavailable">放大控制器不可用</string>
+    <string name="log_zoom_off">→ 取消放大</string>
+    <string name="log_zoom_off_failed">→ 取消失败，请重试</string>
+    <string name="log_zoom_on">→ 放大 %1$s×</string>
+    <string name="log_magnify_ok">放大控制：成功</string>
+    <string name="log_magnify_denied">放大控制：被系统拒绝（请确认已授予放大权限）</string>
+
+    <string name="gesture_passthrough">穿透手势（事件副本）</string>
+    <string name="gesture_unknown">未识别手势</string>
+    <string name="gesture_3_double">三指双击 ★</string>
+    <string name="gesture_3_single">三指单击</string>
+    <string name="gesture_3_triple">三指三击</string>
+    <string name="gesture_3_double_hold">三指双击并按住</string>
+    <string name="gesture_2_double">双指双击</string>
+    <string name="gesture_1_double">单指双击</string>
+    <string name="gesture_3_up">三指上滑</string>
+    <string name="gesture_3_down">三指下滑</string>
+    <string name="gesture_3_left">三指左滑</string>
+    <string name="gesture_3_right">三指右滑</string>
+    <string name="gesture_other">其他手势</string>
+</resources>

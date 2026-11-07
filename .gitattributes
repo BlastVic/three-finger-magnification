@@ -1,0 +1,7 @@
+# Shell scripts must stay LF even when cloned on Windows (core.autocrlf=true).
+*.sh text eol=lf
+*.java text eol=lf
+*.xml text eol=lf
+*.aidl text eol=lf
+*.md text eol=lf
+*.jar binary

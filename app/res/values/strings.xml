@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Default language: English. Chinese lives in values-zh/strings.xml. -->
+<resources>
+    <!-- App / system-visible names -->
+    <string name="app_name">Triple-Tap Zoom</string>
+    <string name="tile_label">Triple-Tap Zoom</string>
+    <string name="accessibility_label">Triple-Tap Zoom</string>
+    <string name="accessibility_summary">Double tap with three fingers to toggle full-screen magnification. Works in any app, including games.</string>
+    <string name="accessibility_description">A read-only listener on the raw touch input detects a three-finger double tap and toggles full-screen magnification; repeat the gesture to restore. Single taps, long presses, swipes and all system gestures are passed through untouched, so three quick taps can no longer trigger the system zoom by accident. The service needs touch exploration for its gesture channel and magnification to scale the screen. It does not read screen content, has no network access and collects no data.</string>
+
+    <!-- Layout -->
+    <string name="title">Triple-Tap Zoom</string>
+    <string name="subtitle">iOS-style zoom · works system-wide</string>
+    <string name="status_title">STATUS</string>
+    <string name="status_not_enabled">● Accessibility service off</string>
+    <string name="zoom_normal">Current: normal</string>
+    <string name="btn_open_accessibility">Enable accessibility service</string>
+    <string name="hint_accessibility">Find &quot;Triple-Tap Zoom&quot; in Settings, turn it on, and allow touch exploration and magnification.</string>
+    <string name="switch_enable">Enable three-finger double tap zoom</string>
+    <string name="hint_gesture">Tap twice with three fingers to zoom in; repeat to restore. Recognised at the raw input layer, so it works on the home screen, in browsers and inside games.</string>
+    <string name="label_scale">Zoom level</string>
+    <string name="label_center">Zoom center</string>
+    <string name="rb_center_gesture">Center on the three fingers (like iOS)</string>
+    <string name="rb_center_screen">Always center on the screen</string>
+    <string name="sw_vibrate">Vibrate on toggle</string>
+    <string name="sw_keep_zoom">Keep zoom when switching apps</string>
+    <string name="hint_keep_zoom">Some Android 15 builds reset zoom when you switch apps. This switch restores it automatically.</string>
+    <string name="sw_zero">Zero-interference mode (recommended, keep on)</string>
+    <string name="hint_zero">On by default (recommended): every touch is handed to apps and SystemUI from the very first frame. Single taps, long presses, swipes, the bottom home gesture, edge-back and the notification shade all keep their stock behaviour - this app never buffers or intercepts any touch.\n\nOnly turn this off if the three-finger double tap stops responding, to try the legacy takeover mode. That mode briefly buffers touches and on some devices turns a single tap into a phantom long press, so it is not recommended for daily use.</string>
+    <string name="label_tools">TOOLS</string>
+    <string name="btn_test">Test: toggle zoom now</string>
+    <string name="btn_battery">Background / battery optimization</string>
+    <string name="btn_system_zoom">Disable system triple-tap zoom</string>
+    <string name="hint_system_zoom">If you enabled the system magnification shortcut before, turn off &quot;Triple-tap to zoom&quot; as well, or it will still fire by accident.</string>
+    <string name="label_diag">GESTURE DIAGNOSTICS</string>
+    <string name="log_empty_short">No records</string>
+    <string name="btn_clear">Clear log</string>
+    <string name="footer_about">How it works: Shizuku runs a read-only listener on the raw touch input node and recognises a three-finger double tap. Nothing is injected, intercepted or buffered, so single taps, long presses, swipes and every system gesture behave exactly as they do without this app. Magnification is applied by the Android magnification controller; you can still touch normally while zoomed, and drag with two fingers to pan.\n\nNote: after a reboot, start Shizuku once (or run the companion script over USB). This app has no network access, reads no screen content and collects no data.</string>
+
+    <!-- Dynamic UI -->
+    <string name="mode_zero">Zero interference (no touch interception)</string>
+    <string name="mode_takeover">Takeover mode (not recommended)</string>
+    <string name="status_running">● Service running · %1$s</string>
+    <string name="status_connecting">● Service enabled (connecting)</string>
+    <string name="status_shizuku">Shizuku: %1$s</string>
+    <string name="state_unavailable_ui">Unavailable: %1$s</string>
+    <string name="zoom_active">Current: zoomed in (double tap with three fingers to restore)</string>
+    <string name="toast_zero_on">Zero interference: system touches stay completely untouched; three fingers are read from raw input via Shizuku</string>
+    <string name="toast_zero_off">Legacy takeover mode: touches are briefly buffered, not recommended</string>
+    <string name="toast_enable_service">Please enable the accessibility service first</string>
+    <string name="toast_battery_fail">Could not open battery settings. Whitelist this app manually in system settings.</string>
+    <string name="toast_system_zoom">In Accessibility → Magnification, turn off the &quot;Triple-tap to zoom&quot; shortcut</string>
+    <string name="toast_settings_fail">Could not open system settings. Go to Settings → Accessibility manually.</string>
+    <string name="log_empty">No records yet. After enabling the service, double tap with three fingers anywhere; detected gestures will appear here.</string>
+
+    <!-- Shizuku bridge states -->
+    <string name="log_shizuku">Shizuku: %1$s</string>
+    <string name="state_not_initialized">Not initialised</string>
+    <string name="state_listener_failed">Could not register listeners: %1$s</string>
+    <string name="state_disconnected">Service disconnected, reconnecting</string>
+    <string name="state_granted">Authorised, connecting</string>
+    <string name="state_denied">Authorisation denied</string>
+    <string name="state_not_running">Service not running (start it in Shizuku)</string>
+    <string name="state_waiting_auth">Waiting for Shizuku authorisation</string>
+    <string name="state_unavailable">Shizuku unavailable: %1$s</string>
+    <string name="state_starting">Starting shell touch listener</string>
+    <string name="state_bind_failed">Bind failed: %1$s</string>
+    <string name="state_listening">Listening (raw touch, read-only)</string>
+    <string name="state_start_failed">Listener failed to start, code=%1$d</string>
+    <string name="state_start_error">Listener start error: %1$s</string>
+    <string name="state_user_service_lost">UserService disconnected</string>
+
+    <!-- Diagnostics written by the accessibility service -->
+    <string name="log_restored_zoom">→ Zoom restored (system reset it)</string>
+    <string name="log_triple_tap">★ Three-finger double tap (peak %1$d fingers)</string>
+    <string name="log_disabled_reset">Feature disabled → zoom restored</string>
+    <string name="log_service_connected">Service connected, gesture listener ready</string>
+    <string name="log_shizuku_init_failed">Shizuku initialisation failed: %1$s</string>
+    <string name="log_debug_zero">Debug: zero interference=%1$b</string>
+    <string name="log_passthrough_full">Passthrough region: full screen (zero interference)</string>
+    <string name="log_passthrough_edges">Passthrough region: system gesture edges, bottom/side/top=%1$d/%2$d/%3$d px</string>
+    <string name="log_region_failed">Region configuration failed: %1$s</string>
+    <string name="log_config_done">Configuration complete: zero interference=%1$b, flags=0x%2$s</string>
+    <string name="log_controller_unavailable">Touch controller unavailable</string>
+    <string name="log_controller_state">Controller state=%1$s</string>
+    <string name="log_controller_attached">Touch controller attached (self-recognising triple double tap)</string>
+    <string name="log_controller_failed">Touch controller registration failed: %1$s</string>
+    <string name="log_touch_stream">Touch stream connected, state=%1$s</string>
+    <string name="log_three_down">Three fingers down (controller, %1$d fingers)</string>
+    <string name="log_passthrough_no_events">Passthrough gesture delivered without event copies (ROM limitation)</string>
+    <string name="log_motion_channel">onMotionEvent raw touch channel available</string>
+    <string name="log_triple_single">Three-finger tap detected (peak %1$d fingers, %2$d ms)</string>
+    <string name="log_triple_legacy">★ Three-finger double tap (passthrough self-recognition)</string>
+    <string name="log_gesture">Gesture #%1$d %2$s | events %3$d | peak %4$d fingers%5$s%6$s</string>
+    <string name="log_gesture_events"> | includes event copies</string>
+    <string name="log_compat_double">→ Compatibility: two three-finger taps combined into a double tap</string>
+    <string name="log_magnifier_unavailable">Magnification controller unavailable</string>
+    <string name="log_zoom_off">→ Zoom off</string>
+    <string name="log_zoom_off_failed">→ Could not turn zoom off, please retry</string>
+    <string name="log_zoom_on">→ Zoom %1$s×</string>
+    <string name="log_magnify_ok">Magnification control: success</string>
+    <string name="log_magnify_denied">Magnification control: rejected by system (check magnification permission)</string>
+
+    <!-- Framework gesture names -->
+    <string name="gesture_passthrough">Passthrough (event copies)</string>
+    <string name="gesture_unknown">Unrecognised gesture</string>
+    <string name="gesture_3_double">Three-finger double tap ★</string>
+    <string name="gesture_3_single">Three-finger single tap</string>
+    <string name="gesture_3_triple">Three-finger triple tap</string>
+    <string name="gesture_3_double_hold">Three-finger double tap and hold</string>
+    <string name="gesture_2_double">Two-finger double tap</string>
+    <string name="gesture_1_double">Single-finger double tap</string>
+    <string name="gesture_3_up">Three-finger swipe up</string>
+    <string name="gesture_3_down">Three-finger swipe down</string>
+    <string name="gesture_3_left">Three-finger swipe left</string>
+    <string name="gesture_3_right">Three-finger swipe right</string>
+    <string name="gesture_other">Other gesture</string>
+</resources>
