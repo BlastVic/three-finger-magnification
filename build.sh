@@ -78,8 +78,8 @@ LIB_AIDL="$LIBS/aidl.jar"
 LIB_SHARED="$LIBS/shared.jar"
 LIB_PROVIDER="$LIBS/provider.jar"
 
-VERSION_CODE=1
-VERSION_NAME="1.0"
+VERSION_CODE="${VERSION_CODE:-1}"
+VERSION_NAME="${VERSION_NAME:-1.0}"
 OUT="dist/three-finger-magnification-v$VERSION_NAME.apk"
 
 rm -rf build
