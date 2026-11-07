@@ -1,6 +1,6 @@
 # Three-Finger Magnification (Triple-Tap Zoom)
 
-[中文说明](README.zh-CN.md) · [Download v1.0](https://github.com/BlastVic/three-finger-magnification/releases/tag/v1.0) · [MIT License](LICENSE)
+[中文说明](README.zh-CN.md) · [Download v1.0.1](https://github.com/BlastVic/three-finger-magnification/releases/tag/v1.0.1) · [MIT License](LICENSE)
 
 > Bring the iOS-style **double-tap with three fingers to zoom** gesture to Android — system-wide, including inside games — **without changing any other touch behaviour**.
 
@@ -70,8 +70,10 @@ The trade-off: on non-rooted devices, **Shizuku must be started again after ever
 
 ### 1. Install the APK
 
-Download [`three-finger-magnification-v1.0.apk`](https://github.com/BlastVic/three-finger-magnification/releases/tag/v1.0) from Releases and install it.
+Download [`three-finger-magnification-v1.0.1.apk`](https://github.com/BlastVic/three-finger-magnification/releases/tag/v1.0.1) from Releases and install it.
 
+> **Already on v1.0? Upgrade.** v1.0 shipped with an accessibility config that could force Android into *touch exploration* mode, which made single-finger taps and swipes stop working (worst case: the lock screen becomes unusable). v1.0.1 removes those flags — the service now only controls magnification. Install v1.0.1 over v1.0, then switch the accessibility service off and on once.
+>
 > Installing over an earlier test build signed with a different key will fail with a signature conflict. Uninstall the old build first.
 
 ### 2. Install and start Shizuku
@@ -214,7 +216,8 @@ No Gradle and no Android Studio project are needed.
 git clone https://github.com/BlastVic/three-finger-magnification.git
 cd three-finger-magnification
 bash build.sh
-# -> dist/three-finger-magnification-v1.0.apk (local debug key, for testing only)
+# -> dist/three-finger-magnification-v<version>.apk (local debug key, for testing only)
+# override with: VERSION_CODE=5 VERSION_NAME=1.0.1 bash build.sh
 ```
 
 To sign a distributable APK with your own key:
@@ -254,6 +257,12 @@ The app declares only `VIBRATE` and the Shizuku API permission. It has **no netw
 ## Contributing
 
 Issues and pull requests are welcome — especially device compatibility reports (please include your device model, Android version, Shizuku version and the relevant `ZoomTapLog` lines). If you found this useful, a star helps other people with the same problem find it.
+
+## Changelog
+
+**v1.0.1** — Removed the leftover `flagRequestTouchExplorationMode` / `flagRequestMultiFingerGestures` / `flagSendMotionEvents` flags from the accessibility service. With them present, Android forced *touch exploration* on and single-finger taps and swipes could stop working entirely. If you installed v1.0, please upgrade.
+
+**v1.0** — First public release.
 
 ## Credits & license
 

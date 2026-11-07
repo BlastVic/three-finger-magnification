@@ -1,6 +1,6 @@
 # 三指双击放大（Triple-Tap Zoom）
 
-[English README](README.md) · [下载 v1.0](https://github.com/BlastVic/three-finger-magnification/releases/tag/v1.0) · [MIT 许可证](LICENSE)
+[English README](README.md) · [下载 v1.0.1](https://github.com/BlastVic/three-finger-magnification/releases/tag/v1.0.1) · [MIT 许可证](LICENSE)
 
 > 把 iOS 上「**三指双击放大屏幕，再次三指双击取消**」的手势带到 Android：全局可用，游戏里也能用，而且**不改变其他任何触摸操作**。
 
@@ -70,8 +70,10 @@ iOS 用的是**三根手指同时双击**：这个手势几乎不可能误触。
 
 ### 第 1 步：安装 APK
 
-从 [Releases v1.0](https://github.com/BlastVic/three-finger-magnification/releases/tag/v1.0) 下载 `three-finger-magnification-v1.0.apk` 并安装。
+从 [Releases v1.0.1](https://github.com/BlastVic/three-finger-magnification/releases/tag/v1.0.1) 下载 `three-finger-magnification-v1.0.1.apk` 并安装。
 
+> **装过 v1.0 的请务必升级。** v1.0 的无障碍配置里残留了早期方案的触摸探索 flag，会强制系统打开「触摸探索」，导致单指点击和滑动失灵，最坏情况是锁屏解不开、整台设备像死机。v1.0.1 已删掉这些 flag，无障碍服务只负责放大。直接覆盖安装 v1.0.1，然后把无障碍开关关一次再打开即可。
+>
 > 如果之前装过用其他密钥签名的测试版，会提示签名冲突，请先卸载旧版本。
 
 ### 第 2 步：安装并启动 Shizuku
@@ -214,7 +216,8 @@ build.sh           aapt2 -> javac -> d8 -> zipalign -> apksigner
 git clone https://github.com/BlastVic/three-finger-magnification.git
 cd three-finger-magnification
 bash build.sh
-# -> dist/three-finger-magnification-v1.0.apk（本地调试密钥，仅供自测）
+# -> dist/three-finger-magnification-v<version>.apk（本地调试密钥，仅供自测）
+# 指定版本：VERSION_CODE=5 VERSION_NAME=1.0.1 bash build.sh
 ```
 
 用自己的密钥签名可发布版本：
@@ -254,6 +257,12 @@ App 只声明了 `VIBRATE` 和 Shizuku API 所需权限，**没有网络权限**
 ## 参与贡献
 
 欢迎提 Issue 和 PR，尤其欢迎**设备兼容性反馈**（请附上机型、Android 版本、Shizuku 版本和相关 `ZoomTapLog` 日志）。如果这个 App 帮到了你，点个 Star 能让更多有同样困扰的人找到它。
+
+## 更新记录
+
+**v1.0.1** —— 删除了无障碍服务里残留的 `flagRequestTouchExplorationMode`／`flagRequestMultiFingerGestures`／`flagSendMotionEvents`。带着这些 flag 时，系统会强制打开「触摸探索」，单指点击与滑动可能完全失灵。装过 v1.0 的请升级。
+
+**v1.0** —— 首个公开版本。
 
 ## 致谢与许可证
 
